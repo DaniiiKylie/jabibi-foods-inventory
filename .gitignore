@@ -8,6 +8,9 @@ obj/
 # Access lock file, present while the database is open
 *.laccdb
 
+# Local test account details, never committed
+*.local.txt
+
 # Lesson notes and video work files kept beside the project, not part of the submission
 video/
 work/

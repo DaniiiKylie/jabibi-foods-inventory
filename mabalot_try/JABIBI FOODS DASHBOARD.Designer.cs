@@ -32,6 +32,7 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -131,6 +132,7 @@
             this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel15.Controls.Add(this.label40);
             this.panel15.Controls.Add(this.label41);
+            this.panel15.Controls.Add(this.btnLogOut);
             this.panel15.Location = new System.Drawing.Point(1, 614);
             this.panel15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel15.Name = "panel15";
@@ -139,13 +141,13 @@
             // 
             // label40
             // 
-            this.label40.AutoSize = true;
+            this.label40.AutoEllipsis = true;
             this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label40.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label40.Location = new System.Drawing.Point(128, 16);
             this.label40.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(135, 20);
+            this.label40.Size = new System.Drawing.Size(182, 20);
             this.label40.TabIndex = 0;
             this.label40.Text = "Danah Mabalot";
             this.label40.Click += new System.EventHandler(this.label40_Click);
@@ -161,6 +163,17 @@
             this.label41.Size = new System.Drawing.Size(79, 17);
             this.label41.TabIndex = 1;
             this.label41.Text = "Purchasing";
+            //
+            // btnLogOut
+            //
+            this.btnLogOut.BackColor = System.Drawing.Color.RosyBrown;
+            this.btnLogOut.Location = new System.Drawing.Point(318, 15);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(92, 30);
+            this.btnLogOut.TabIndex = 2;
+            this.btnLogOut.Text = "Log out";
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // panel6
             // 
@@ -365,7 +378,7 @@
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(213, 17);
             this.label26.TabIndex = 14;
-            this.label26.Text = "The line traces the lkast 14 days";
+            this.label26.Text = "The line traces the last 14 days";
             // 
             // label20
             // 
@@ -425,7 +438,7 @@
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(213, 17);
             this.label27.TabIndex = 15;
-            this.label27.Text = "The line traces the lkast 14 days";
+            this.label27.Text = "The line traces the last 14 days";
             // 
             // label22
             // 
@@ -484,7 +497,7 @@
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(213, 17);
             this.label28.TabIndex = 16;
-            this.label28.Text = "The line traces the lkast 14 days";
+            this.label28.Text = "The line traces the last 14 days";
             // 
             // label24
             // 
@@ -541,7 +554,7 @@
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(213, 17);
             this.label29.TabIndex = 18;
-            this.label29.Text = "The line traces the lkast 14 days";
+            this.label29.Text = "The line traces the last 14 days";
             // 
             // label25
             // 
@@ -908,6 +921,7 @@
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel1;
     }

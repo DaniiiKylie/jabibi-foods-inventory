@@ -16,7 +16,7 @@ namespace mabalot_try
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new SignInForm());
         }
     }
 }
