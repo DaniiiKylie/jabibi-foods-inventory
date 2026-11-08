@@ -1,0 +1,16 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.suo
+
+# Access lock file, present while the database is open
+*.laccdb
+
+# Lesson notes and video work files kept beside the project, not part of the submission
+video/
+work/
+probe/
+logs/
+activity-1-final-term.md
