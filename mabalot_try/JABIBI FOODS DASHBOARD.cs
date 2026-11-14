@@ -15,6 +15,12 @@ namespace mabalot_try
         // True when the dashboard closed through Log out, so the log in form shows again.
         public bool LoggedOut { get; private set; }
 
+        // The signed in account, handed on to the Items and Users pages for their sidebar footers.
+        // The Users page reads the username so that account can never be deleted or turned off.
+        private readonly string fullName = "";
+        private readonly string role = "";
+        private readonly string username = "";
+
         public JABIBI_FOODS_DASHBOARD()
         {
             InitializeComponent();
@@ -25,8 +31,16 @@ namespace mabalot_try
 
         // Shows the signed in account in the sidebar footer. A name too long for the footer is cut
         // by character before the Log out button, and the whole name shows as a tooltip.
-        public JABIBI_FOODS_DASHBOARD(string fullName, string role) : this()
+        public JABIBI_FOODS_DASHBOARD(string fullName, string role) : this(fullName, role, "")
         {
+        }
+
+        public JABIBI_FOODS_DASHBOARD(string fullName, string role, string username) : this()
+        {
+            this.fullName = fullName;
+            this.role = role;
+            this.username = username;
+
             label40.Text = FitToWidth(fullName, label40.Font, label40.Width);
             label41.Text = role;
 
@@ -37,7 +51,7 @@ namespace mabalot_try
             }
         }
 
-        private static string FitToWidth(string text, Font font, int width)
+        internal static string FitToWidth(string text, Font font, int width)
         {
             if (TextRenderer.MeasureText(text, font).Width <= width)
                 return text;
@@ -88,12 +102,48 @@ namespace mabalot_try
 
         }
 
+        // Items in the sidebar
         private void label7_Click(object sender, EventArgs e)
         {
-            Jabibi_New_Item item = new Jabibi_New_Item();
-            // Bring the dashboard back when the new item form closes, instead of leaving it hidden.
-            item.FormClosed += (s, args) => this.Show();
-            item.Show();
+            OpenPage("Items", this.Location);
+        }
+
+        private void lblUsers_Click(object sender, EventArgs e)
+        {
+            OpenPage("Users", this.Location);
+        }
+
+        // Opens a sidebar page where this window is and hides the dashboard. When the page closes,
+        // it names the next page to open, or none, which brings the dashboard back instead of
+        // leaving it hidden.
+        private void OpenPage(string page, Point location)
+        {
+            Form form;
+
+            if (page == "Users")
+                form = new UsersForm(fullName, role, username);
+            else
+                form = new ItemsForm(fullName, role);
+
+            form.StartPosition = FormStartPosition.Manual;
+            form.Location = location;
+            form.FormClosed += (s, args) =>
+            {
+                Form closed = (Form)s;
+                string next = ((ISidebarPage)closed).NextPage;
+
+                if (next == "LogOut")
+                {
+                    // Log out pressed on the page: close the dashboard the same way its own Log out does.
+                    LoggedOut = true;
+                    this.Close();
+                }
+                else if (next != null)
+                    OpenPage(next, closed.Location);
+                else
+                    this.Show();
+            };
+            form.Show();
             this.Hide();
         }
 

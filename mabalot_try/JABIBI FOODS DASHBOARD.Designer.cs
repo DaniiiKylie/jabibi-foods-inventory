@@ -46,6 +46,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblAdmin = new System.Windows.Forms.Label();
+            this.lblUsers = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -110,6 +112,8 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.panel15);
             this.panel1.Controls.Add(this.panel6);
+            this.panel1.Controls.Add(this.lblUsers);
+            this.panel1.Controls.Add(this.lblAdmin);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label10);
@@ -225,7 +229,31 @@
             this.label12.Size = new System.Drawing.Size(77, 20);
             this.label12.TabIndex = 11;
             this.label12.Text = "Recipes";
-            // 
+            //
+            // lblAdmin
+            //
+            this.lblAdmin.AutoSize = true;
+            this.lblAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.lblAdmin.Location = new System.Drawing.Point(5, 481);
+            this.lblAdmin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAdmin.Name = "lblAdmin";
+            this.lblAdmin.Size = new System.Drawing.Size(45, 17);
+            this.lblAdmin.TabIndex = 14;
+            this.lblAdmin.Text = "Admin";
+            //
+            // lblUsers
+            //
+            this.lblUsers.AutoSize = true;
+            this.lblUsers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsers.Location = new System.Drawing.Point(5, 515);
+            this.lblUsers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsers.Name = "lblUsers";
+            this.lblUsers.Size = new System.Drawing.Size(55, 20);
+            this.lblUsers.TabIndex = 15;
+            this.lblUsers.Text = "Users";
+            this.lblUsers.Click += new System.EventHandler(this.lblUsers_Click);
+            //
             // label11
             // 
             this.label11.AutoSize = true;
@@ -273,6 +301,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(4, 245);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -924,5 +953,7 @@
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label lblAdmin;
+        private System.Windows.Forms.Label lblUsers;
     }
 }

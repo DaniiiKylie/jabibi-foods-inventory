@@ -73,7 +73,7 @@ namespace mabalot_try
 
             MessageBox.Show($"Welcome, {fullName}.", "Log in", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            JABIBI_FOODS_DASHBOARD dashboard = new JABIBI_FOODS_DASHBOARD(fullName, role);
+            JABIBI_FOODS_DASHBOARD dashboard = new JABIBI_FOODS_DASHBOARD(fullName, role, username);
             dashboard.FormClosed += Dashboard_FormClosed;
             txtPassword.Clear();
             this.Hide();
